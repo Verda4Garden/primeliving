@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT Mahakam Prime Living | Bangun Rumah Tanpa Ribet</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        'mpl-bg': '#F9F9F7',
+                        'mpl-beige': '#EBE9E4',
+                        'mpl-navy': '#2C3E50',
+                        'mpl-green': '#5D7066',
+                        'mpl-gray': '#F3F4F6',
+                        'mpl-text': '#4B5563',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .accordion-content {
+            transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        
+        .accordion-content.open {
+            opacity: 1;
+        }
+
+        .hover-card:hover .card-img {
+            transform: scale(1.05);
+        }
+        .card-img {
+            transition: transform 0.6s ease;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.8), rgba(93, 112, 102, 0.6));
+        }
+
+        /* Image Loading State */
+        img {
+            background-color: #e5e7eb;
+        }
+    </style>
+</head>
+<body class="bg-mpl-bg text-mpl-text antialiased selection:bg-mpl-green selection:text-white">
+
+    <nav class="fixed w-full z-50 transition-all duration-300 backdrop-blur-md bg-white/80 border-b border-stone-100 py-4">
+        <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
+            <div class="text-xl font-bold text-mpl-navy tracking-tight">
+                Mahakam <span class="font-light text-mpl-green">Prime Living</span>
+            </div>
+            <a href="https://wa.me/" class="hidden md:inline-block px-5 py-2 rounded-full border border-mpl-navy text-mpl-navy text-sm font-medium hover:bg-mpl-navy hover:text-white transition-colors">
+                Hubungi Kami
+            </a>
+        </div>
+    </nav>
+
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="hasil1.jpg" 
+                 alt="Modern House Samarinda" 
+                 class="w-full h-full object-cover"
+                 onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop'">
+        </div>
+        <div class="absolute inset-0 hero-overlay z-10"></div>
+
+        <div class="relative z-20 text-center px-6 max-w-3xl mx-auto text-white">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight leading-tight opacity-0 animate-[fadeUp_1s_ease-out_forwards]">
+                Bangun Rumah <br> Tanpa Ribet.
+            </h1>
+            <p class="text-lg md:text-xl text-stone-200 mb-8 font-light opacity-0 animate-[fadeUp_1s_ease-out_0.3s_forwards]">
+                Kami bantu dari ide, desain, sampai rumah jadi. Wujudkan hunian impian Anda di Samarinda bersama tim yang mengerti.
+            </p>
+            <div class="opacity-0 animate-[fadeUp_1s_ease-out_0.6s_forwards]">
+                <a href="#about" class="inline-block bg-white text-mpl-navy px-8 py-4 rounded-full font-semibold hover:bg-mpl-beige hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    Ngobrol Gratis
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="py-24 px-6 bg-white">
+        <div class="max-w-3xl mx-auto text-center reveal">
+            <span class="text-mpl-green text-sm font-bold tracking-widest uppercase mb-4 block">Tentang Kami</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-mpl-navy mb-8 leading-snug">
+                Bukan Sekadar Kontraktor, <br> Tapi Teman Diskusi Anda.
+            </h2>
+            <div class="space-y-6 text-lg font-light leading-relaxed text-slate-600">
+                <p>
+                    Cerita kami dimulai dari sebuah ruko kecil di Samarinda. Saat itu, kami hanya sekumpulan arsitek dan tukang yang punya satu visi: 
+                    <em class="text-mpl-navy font-medium">membangun rumah seharusnya tidak membuat pemiliknya stres.</em>
+                </p>
+                <p>
+                    Tahun demi tahun berlalu, kepercayaan Anda membuat kami tumbuh menjadi <strong>PT Mahakam Prime Living</strong>. 
+                    Meskipun skala kami membesar, semangat kami tetap sama. Kami tetap tim yang 'enak diajak ngobrol', 
+                    transparan soal biaya, dan detail dalam pengerjaan.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-mpl-bg">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl font-bold text-mpl-navy mb-3">Karya Terkini</h2>
+                <p class="text-slate-500">Sentuhan modern di jantung Kalimantan Timur.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="group hover-card cursor-pointer reveal delay-100">
+                    <div class="overflow-hidden rounded-2xl shadow-sm mb-4 aspect-[4/5]">
+                        <img src="hasil2.jpg" 
+                             alt="Rumah Modern Minimalis" 
+                             class="card-img w-full h-full object-cover"
+                             onerror="this.src='https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop'">
+                    </div>
+                    <h3 class="text-xl font-bold text-mpl-navy group-hover:text-mpl-green transition-colors">The River House</h3>
+                    <p class="text-sm text-slate-500 mt-1">Modern Tropical • Samarinda Seberang</p>
+                </div>
+
+                <div class="group hover-card cursor-pointer reveal delay-200">
+                    <div class="overflow-hidden rounded-2xl shadow-sm mb-4 aspect-[4/5]">
+                        <img src="hasil3.jpg" 
+                             alt="Rumah Scandinavian" 
+                             class="card-img w-full h-full object-cover"
+                             onerror="this.src='https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop'">
+                    </div>
+                    <h3 class="text-xl font-bold text-mpl-navy group-hover:text-mpl-green transition-colors">Mahakam Villa</h3>
+                    <p class="text-sm text-slate-500 mt-1">Scandinavian • Sempaja</p>
+                </div>
+
+                <div class="group hover-card cursor-pointer reveal delay-300">
+                    <div class="overflow-hidden rounded-2xl shadow-sm mb-4 aspect-[4/5]">
+                        <img src="hasil4.jpg" 
+                             alt="Rumah Klasik Modern" 
+                             class="card-img w-full h-full object-cover"
+                             onerror="this.src='https://images.unsplash.com/photo-1600566753086-00f18cf6b3ea?q=80&w=2070&auto=format&fit=crop'">
+                    </div>
+                    <h3 class="text-xl font-bold text-mpl-navy group-hover:text-mpl-green transition-colors">Casa Verde</h3>
+                    <p class="text-sm text-slate-500 mt-1">Modern Classic • CitraLand</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-white">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-3xl font-bold text-center text-mpl-navy mb-12 reveal">Informasi & Layanan</h2>
+            
+            <div class="space-y-4 reveal">
+                <div class="border border-stone-200 rounded-2xl overflow-hidden hover:border-mpl-green transition-colors duration-300">
+                    <button class="accordion-btn w-full px-6 py-5 flex justify-between items-center bg-stone-50 hover:bg-stone-100 transition-colors">
+                        <span class="font-semibold text-mpl-navy text-lg">Proses Bangun Rumah</span>
+                        <svg class="w-6 h-6 transform transition-transform duration-300 text-mpl-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content bg-white">
+                        <div class="px-6 py-5 text-slate-600 leading-relaxed border-t border-stone-100">
+                            Kami memulainya dengan diskusi santai (konsultasi gratis). Setelah itu masuk ke tahap survei lokasi, pembuatan desain denah & 3D, perhitungan RAB transparan, hingga eksekusi pembangunan dengan laporan progres mingguan via WhatsApp.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border border-stone-200 rounded-2xl overflow-hidden hover:border-mpl-green transition-colors duration-300">
+                    <button class="accordion-btn w-full px-6 py-5 flex justify-between items-center bg-stone-50 hover:bg-stone-100 transition-colors">
+                        <span class="font-semibold text-mpl-navy text-lg">Layanan Kami</span>
+                        <svg class="w-6 h-6 transform transition-transform duration-300 text-mpl-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content bg-white">
+                        <div class="px-6 py-5 text-slate-600 leading-relaxed border-t border-stone-100">
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li>Jasa Bangun Rumah (Baru/Renovasi)</li>
+                                <li>Desain Arsitektur & Interior</li>
+                                <li>Pengurusan IMB/PBG</li>
+                                <li>Konsultasi Anggaran Konstruksi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border border-stone-200 rounded-2xl overflow-hidden hover:border-mpl-green transition-colors duration-300">
+                    <button class="accordion-btn w-full px-6 py-5 flex justify-between items-center bg-stone-50 hover:bg-stone-100 transition-colors">
+                        <span class="font-semibold text-mpl-navy text-lg">Kenapa Mahakam Prime Living?</span>
+                        <svg class="w-6 h-6 transform transition-transform duration-300 text-mpl-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content bg-white">
+                        <div class="px-6 py-5 text-slate-600 leading-relaxed border-t border-stone-100">
+                            Kami bukan hanya tukang, kami adalah partner. Kami mengutamakan "Kualitas vs Budget" yang seimbang. Tidak ada biaya tersembunyi, spesifikasi material jelas di awal, dan garansi pemeliharaan pasca konstruksi selama 3 bulan.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border border-stone-200 rounded-2xl overflow-hidden hover:border-mpl-green transition-colors duration-300">
+                    <button class="accordion-btn w-full px-6 py-5 flex justify-between items-center bg-stone-50 hover:bg-stone-100 transition-colors">
+                        <span class="font-semibold text-mpl-navy text-lg">Area Layanan</span>
+                        <svg class="w-6 h-6 transform transition-transform duration-300 text-mpl-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content bg-white">
+                        <div class="px-6 py-5 text-slate-600 leading-relaxed border-t border-stone-100">
+                            Fokus utama kami adalah Kota Samarinda, namun kami juga melayani area sekitar seperti Tenggarong dan Balikpapan (dengan syarat & ketentuan tertentu untuk akomodasi tim).
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-mpl-navy text-stone-300 py-16 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+            
+            <div class="max-w-sm">
+                <div class="text-2xl font-bold text-white mb-4">Mahakam Prime Living</div>
+                <p class="text-stone-400 font-light mb-6">Mewujudkan hunian nyaman dengan proses yang tenang dan menyenangkan di Samarinda.</p>
+                <a href="#" class="inline-flex items-center justify-center gap-2 bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition-colors">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.466c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-8.68-2.031-.967-.272-.297-.471-.446-.916-.446-.445 0-.891.173-1.337.594-.446.421-1.708 1.66-1.708 4.037s1.758 4.681 2.006 5.003c.248.322 3.393 5.448 8.356 7.351 4.963 1.903 4.963 1.274 5.856 1.192.891-.082 2.92-1.189 3.34-2.327.422-1.138.422-2.105.298-2.327z"/></svg>
+                    Chat via WhatsApp
+                </a>
+            </div>
+
+            <div>
+                <h4 class="text-white font-semibold mb-4">Menu</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="#" class="hover:text-white transition-colors">Tentang Kami</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Proyek</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Harga & Layanan</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Karir</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-semibold mb-4">Kantor</h4>
+                <address class="not-italic text-sm space-y-2">
+                    <p>Jl. penjual lemari</p>
+                    <p>Samarinda, Kalimantan Timur</p>
+                    <p class="mt-4">0858-2185-8088</p>
+                    <p>lemaridian@gmail.com</p>
+                </address>
+            </div>
+        </div>
+        
+        <div class="border-t border-slate-700 mt-16 pt-8 text-center text-xs text-stone-500">
+            &copy; 2024 PT Mahakam Prime Living. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        const accordions = document.querySelectorAll('.accordion-btn');
+
+        accordions.forEach(acc => {
+            acc.addEventListener('click', function() {
+                const icon = this.querySelector('svg');
+                const content = this.nextElementSibling;
+                
+                accordions.forEach(otherAcc => {
+                    if (otherAcc !== this) {
+                        const otherContent = otherAcc.nextElementSibling;
+                        otherContent.style.maxHeight = null;
+                        otherContent.classList.remove('open');
+                        otherAcc.querySelector('svg').style.transform = 'rotate(0deg)';
+                    }
+                });
+
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    content.classList.remove('open');
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    content.classList.add('open');
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
